@@ -15,6 +15,8 @@ const root = ReactDOM.createRoot(
   document.getElementById("root")
 );
 root.render(
+  <div>
+    <div style={{ display: 'none' }}>url: {process.env.PUBLIC_URL}</div>
   <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Routes>
       <Route path="/" element={<App />}>
@@ -30,4 +32,5 @@ root.render(
       </Route>
     </Routes>
   </BrowserRouter>
+  </div>
 );

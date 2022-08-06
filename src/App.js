@@ -13,8 +13,6 @@ const App = () => {
 
   return <>
       <Header />
-
-
       <Outlet></Outlet>
       <pre>
         {JSON.stringify(data, null, 2)}<br/>
