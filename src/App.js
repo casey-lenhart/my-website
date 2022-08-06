@@ -9,8 +9,6 @@ const App = () => {
     sheetId: '1_wiygUp4ZTrDy5VBjSO3tYVSlTQXBMWd-G1alnulptQ',
   });
 
-  
-
   return <>
       <Header />
       <Outlet></Outlet>
