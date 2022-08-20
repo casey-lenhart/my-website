@@ -16,7 +16,7 @@ const Home = () => {
         <div className="columns is-flex is-align-items-center">
             <div className="column is-2"></div>
             <div className="column is-2 is-flex is-align-items-center">
-                <img src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/Casey.JPG" />
+                <img src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/Screen Shot 2022-08-20 at 11.49.40 AM.png" />
             </div>
             <div className="column is-6 pl-5">
                 <b>Casey Lenhart</b>
@@ -27,7 +27,7 @@ const Home = () => {
             <div className="column is-2"></div>
         </div>
       </div></div> : <div className='container px-5 mt-2 mb-5 has-text-centered'>
-            <img src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/Casey.JPG" style={{ maxHeight: 300 }}/>
+            <img src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/Screen Shot 2022-08-20 at 11.49.40 AM.png" style={{ maxHeight: 300 }}/>
             <div className='my-3' style={{ fontSize: '1rem' }}>
             <b>Casey Lenhart</b>{description}
             </div>
