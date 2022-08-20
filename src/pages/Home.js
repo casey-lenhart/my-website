@@ -16,7 +16,7 @@ const Home = () => {
         <div className="columns is-flex is-align-items-center">
             <div className="column is-2"></div>
             <div className="column is-2 is-flex is-align-items-center">
-                <img src="https://bulma.io/images/placeholders/480x600.png" />
+                <img src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/DSC_0103.JPG" />
             </div>
             <div className="column is-6 pl-5">
                 <b>Casey Lenhart</b>
