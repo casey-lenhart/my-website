@@ -27,7 +27,7 @@ const Home = () => {
             <div className="column is-2"></div>
         </div>
       </div></div> : <div className='container px-5 mt-2 mb-5 has-text-centered'>
-            <img src="https://bulma.io/images/placeholders/480x600.png" style={{ maxHeight: 300 }}/>
+            <img src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/DSC_0103.JPG" style={{ maxHeight: 300 }}/>
             <div className='my-3' style={{ fontSize: '1rem' }}>
             <b>Casey Lenhart</b>{description}
             </div>
