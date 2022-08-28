@@ -6,10 +6,12 @@ Far far away, behind the word mountains, far from the countries Vokalia and Cons
 
 `;
 
-const About = () => {
+const About = ({ data }) => {
+  const sheet = data.find((sheet) => sheet.id === "content");
+  if (!sheet) return null;
   return (
     <Content title="About">
-      <div className="is-size-4">{about}</div>
+      <div className="is-size-4">{sheet.data[0]['About']}</div>
       <div className="has-text-centered my-5">
         <img src="https://bulma.io/images/placeholders/640x480.png"></img>
       </div>

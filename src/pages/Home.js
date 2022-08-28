@@ -1,14 +1,9 @@
 import useWindowWidth from "../hooks/useWindowWidth";
 
-const description = `
-
-is a former film student at the College of William & Mary. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-`;
-
-const Home = () => {
+const Home = ({ data }) => {
   const width = useWindowWidth();
-
+  const sheet = data.find((sheet) => sheet.id === "content");
+  if (!sheet) return null;
   return (
     <section className="hero is-fullheight-with-navbar">
       {width >= 1023 ? (
@@ -21,7 +16,7 @@ const Home = () => {
               </div>
               <div className="column is-4 pl-5">
                 <b>Casey Lenhart</b>
-                <div className="is-size-4">{description}</div>
+                <div className="is-size-4">{sheet.data[0]['Home']}</div>
               </div>
               <div className="column is-2"></div>
             </div>
@@ -35,7 +30,7 @@ const Home = () => {
           />
           <div className="my-3" style={{ fontSize: "1rem" }}>
             <b>Casey Lenhart</b>
-            {description}
+            {sheet.data[0]['Home']}
           </div>
         </div>
       )}

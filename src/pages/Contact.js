@@ -1,5 +1,9 @@
+import Content from "../components/Content";
+
 const Contact = () => {
-  return <div>this is the Contact page</div>;
+  return <Content title="Contact">
+    <div className="is-size-4"></div>
+  </Content>
 };
 
 export default Contact;

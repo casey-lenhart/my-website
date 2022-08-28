@@ -3,26 +3,38 @@ import useGoogleSheets from "use-google-sheets";
 import { useMemo } from "react";
 import _ from "lodash";
 
+const YoutubeEmbed = ({ src }) => {
+  const embedString = src.replace('/watch?v=', '/embed/')
+  return (
+    <figure class="image is-16by9">
+    <iframe
+      className='has-ratio'
+      src={embedString}
+      style={{ width: '100%', height: '100%' }}
+      title="YouTube video player"
+      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+    </figure>
+  );
+};
+
 const VideoCard = ({ title, date, description, link }) => {
   return (
     <div className="card">
       <div className="card-image">
-        <figure className="image is-16x9">
-          <img src="https://bulma.io/images/placeholders/640x360.png" />
-        </figure>
+        <YoutubeEmbed src={link} />
       </div>
       <div
-        className="card-content"
+        className="card-content py-4"
         style={{ backgroundColor: "rgb(232, 250, 235)" }}
       >
         <div className="content">
           <div className="has-text-centered">
-            <b className="is-size-5">
-              {title} {date}
-            </b>
-            <p>{description}</p>
-            <p>{link}</p>
+            <b className="is-size-4 mb-5">{title}</b>
+            <br />
           </div>
+            <p className="is-size-5">{description}</p>
         </div>
       </div>
     </div>
@@ -42,42 +54,37 @@ const VideoWorks = ({ sheetsData }) => {
   if (!sheetsData) return null;
   const sheet = sheetsData.find((sheet) => sheet.id === "video");
   if (!sheet) return null;
-  return _.chunk(sheet.data, 2).map((chunk) => {
+  return _.chunk(sheet.data, 2).map((chunk, i) => {
     return (
-      <div className="columns">
+      <div className="columns" key={i}>
         <div className="column">
           <VideoCard {...sheetPointToCard(chunk[0])} />
         </div>
-        {chunk.length > 1 ? (
-          <div className="column">
+
+        <div className="column">
+          {chunk.length > 1 ? (
             <VideoCard {...sheetPointToCard(chunk[1])} />
-          </div>
-        ) : null}
+          ) : null}
+        </div>
       </div>
     );
   });
 };
 
-const Works = () => {
-  const { data, loading, error } = useGoogleSheets({
-    apiKey: "AIzaSyDnZ4bFfMlvV4VBL9RKsQJ2LdVXht4vLKY",
-    sheetId: "1_wiygUp4ZTrDy5VBjSO3tYVSlTQXBMWd-G1alnulptQ",
-  });
-
-  const worksData = useMemo(() => data, [data, loading]);
+const Works = ({ data }) => {
 
   return (
     <Content title="Works">
       <br />
-      <VideoWorks sheetsData={worksData} />
-      <pre>
+      <VideoWorks sheetsData={data} />
+      {/* <pre>
         {JSON.stringify(data, null, 2)}
         <br />
         {JSON.stringify(loading, null, 2)}
         <br />
         {JSON.stringify(error, null, 2)}
         <br />
-      </pre>
+      </pre> */}
     </Content>
   );
 };
