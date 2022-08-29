@@ -11,9 +11,9 @@ const About = ({ data }) => {
   if (!sheet) return null;
   return (
     <Content title="About">
-      <div className="is-size-4">{sheet.data[0]['About']}</div>
-      <div className="has-text-centered my-5">
-        <img src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/Screen Shot 2022-08-20 at 11.49.40 AM.png"></img>
+      <div className="is-size-5">{sheet.data[0]['About']}</div>
+      <div className="has-text-centered my-4">
+        <img src="casey-lenhart.github.io/main/public/Screen Shot 2022-08-20 at 11.49.40 AM.png"></img>
       </div>
     </Content>
   );
