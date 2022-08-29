@@ -13,7 +13,7 @@ const About = ({ data }) => {
     <Content title="About">
       <div className="is-size-4">{sheet.data[0]['About']}</div>
       <div className="has-text-centered my-5">
-        <img src="https://bulma.io/images/placeholders/640x480.png"></img>
+        <img src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/Screen Shot 2022-08-20 at 11.49.40 AM.png"></img>
       </div>
     </Content>
   );
