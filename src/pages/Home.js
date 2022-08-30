@@ -4,6 +4,9 @@ const Home = ({ data }) => {
   const width = useWindowWidth();
   const sheet = data.find((sheet) => sheet.id === "content");
   if (!sheet) return null;
+  const home = sheet.data[0]['Home'].split('\n\n').map((paragraph, i) => {
+    return <p key={i}>{paragraph}</p>
+  })
   return (
     <section className="hero is-fullheight-with-navbar">
       {width >= 1023 ? (
@@ -16,7 +19,7 @@ const Home = ({ data }) => {
               </div>
               <div className="column is-3 pl-5">
                 <b>Casey Lenhart</b>
-                <div className="is-size-4">{sheet.data[0]['Home']}</div>
+                <div className="is-size-4">{home}</div>
               </div>
               <div className="column is-2"></div>
             </div>
@@ -30,7 +33,7 @@ const Home = ({ data }) => {
           />
           <div className="my-3" style={{ fontSize: "1rem" }}>
             <b>Casey Lenhart</b>
-            {sheet.data[0]['Home']}
+            {home}
           </div>
         </div>
       )}
