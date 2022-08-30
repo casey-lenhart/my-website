@@ -13,7 +13,7 @@ const Root = () => {
     apiKey: "AIzaSyDnZ4bFfMlvV4VBL9RKsQJ2LdVXht4vLKY",
     sheetId: "1_wiygUp4ZTrDy5VBjSO3tYVSlTQXBMWd-G1alnulptQ",
   });
-
+  console.log(data)
   return <div>
     <div style={{ display: "none" }}>url: {process.env.PUBLIC_URL}</div>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
