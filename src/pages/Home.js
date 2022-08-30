@@ -11,10 +11,10 @@ const Home = ({ data }) => {
           <div style={{ fontSize: width < 1280 ? "2rem" : "3rem" }}>
             <div className="columns is-flex is-align-items-center">
               <div className="column is-2"></div>
-              <div className="column is-4 is-flex is-align-items-center">
+              <div className="column is-5 is-flex is-align-items-center">
                 <img src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/unnamed-5.jpg" />
               </div>
-              <div className="column is-4 pl-5">
+              <div className="column is-3 pl-5">
                 <b>Casey Lenhart</b>
                 <div className="is-size-4">{sheet.data[0]['Home']}</div>
               </div>
