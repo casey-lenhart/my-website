@@ -4,7 +4,7 @@ const Home = ({ data }) => {
   const width = useWindowWidth();
   const sheet = data.find((sheet) => sheet.id === "content");
   if (!sheet) return null;
-  const home = sheet.data[0]['Home'].split('\n\n').map((paragraph, i) => {
+  const home = sheet.data[0]['Home'].split('\n').map((paragraph, i) => {
     return <p key={i}>{paragraph}</p>
   })
   return (
