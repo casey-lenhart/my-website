@@ -3,7 +3,7 @@ import Content from "../components/Content";
 const About = ({ data }) => {
   const sheet = data.find((sheet) => sheet.id === "content");
   if (!sheet) return null;
-  const about = sheet.data[0]['About'].split("\n\n")
+  const about = sheet.data[0]['About'].split("\n")
   return (
     <Content title="About">
       <div className="is-size-5">{about.map((paragraph, i) => {
