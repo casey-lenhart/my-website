@@ -7,7 +7,7 @@ const About = ({ data }) => {
   return (
     <Content title="About">
       <div className="is-size-5">{about.map((paragraph, i) => {
-        return <p key={i}>{paragraph}</p>
+        return <p key={i} className='mb-2'>{paragraph}</p>
       })}</div>
       <div className="has-text-centered my-4">
         <img src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/Screen%20Shot%202022-08-20%20at%2011.49.40%20AM.png"></img>
