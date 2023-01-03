@@ -10,7 +10,7 @@ const About = ({ data }) => {
         return <p key={i} className='mb-2'>{paragraph}</p>
       })}</div>
       <div className="has-text-centered my-4">
-        <img src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/Screen%20Shot%202022-08-20%20at%2011.49.40%20AM.png"></img>
+        <img src="https://github.com/casey-lenhart/casey-lenhart.github.io/blob/main/public/unnamed-5.jpg"></img>
       </div>
     </Content>
   );
