@@ -4,6 +4,7 @@ const Home = ({ data }) => {
   const width = useWindowWidth();
   const sheet = data.find((sheet) => sheet.id === "content");
   if (!sheet) return null;
+  console.log(sheet)
   const home = sheet.data[0]['Home'].split('\n').map((paragraph, i) => {
     return <p key={i}>{paragraph}</p>
   })
@@ -15,7 +16,7 @@ const Home = ({ data }) => {
             <div className="columns is-flex is-align-items-center">
               <div className="column is-2"></div>
               <div className="column is-3 is-flex is-align-items-center">
-                <img src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/IMG_2290.jpg" />
+                <img src={sheet.data[0]['Homepage image URL']} />
               </div>
               <div className="column is-5 pl-5">
                 <b>Casey Lenhart</b>
