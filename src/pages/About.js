@@ -10,7 +10,7 @@ const About = ({ data }) => {
         return <p key={i} className='mb-2'>{paragraph}</p>
       })}</div>
       <div className="has-text-centered my-4">
-        <img src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/unnamed-5.jpg"></img>
+        <img src={sheet.data[0]['About page image URL']} style={{ maxHeight: '300px' }}></img>
       </div>
     </Content>
   );

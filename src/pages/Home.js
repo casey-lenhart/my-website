@@ -29,7 +29,7 @@ const Home = ({ data }) => {
       ) : (
         <div className="container px-5 mt-2 mb-5 has-text-centered">
           <img
-            src="https://raw.githubusercontent.com/casey-lenhart/casey-lenhart.github.io/main/public/IMG_2290.jpg"
+            src={sheet.data[0]['Homepage image URL']}
             style={{ maxHeight: 300 }}
           />
           <div className="my-3" style={{ fontSize: "1rem" }}>
