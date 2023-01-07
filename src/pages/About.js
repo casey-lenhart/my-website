@@ -9,8 +9,9 @@ const About = ({ data }) => {
       <div className="is-size-5">{about.map((paragraph, i) => {
         return <p key={i} className='mb-2'>{paragraph}</p>
       })}</div>
+      <br />
       <div className="has-text-centered my-4">
-        <img src={sheet.data[0]['About page image URL']} style={{ maxHeight: '300px' }}></img>
+        <img src={sheet.data[0]['About page image URL']} style={{ maxHeight: '500px' }}></img>
       </div>
     </Content>
   );
