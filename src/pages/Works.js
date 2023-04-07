@@ -1,12 +1,10 @@
 import Content from "../components/Content";
-import useGoogleSheets from "use-google-sheets";
-import { useMemo } from "react";
 import _ from "lodash";
 
 const YoutubeEmbed = ({ src }) => {
   const embedString = src.replace('/watch?v=', '/embed/')
   return (
-    <figure class="image is-16by9">
+    <figure class="image is-16by9" style={{ background: 'black' }}>
     <iframe
       className='has-ratio'
       src={embedString}
@@ -19,11 +17,31 @@ const YoutubeEmbed = ({ src }) => {
   );
 };
 
+const VimeoEmbed = ({ src }) => {
+  if (typeof src !== 'string') return null
+
+  const videoId = src.split('/').slice(-1, undefined)[0]
+
+  const embedString = `https://player.vimeo.com/video/${videoId}`
+  return (
+    <figure class="image is-16by9" style={{ background: 'black' }}>
+    <iframe
+      className='has-ratio'
+      src={embedString}
+      frameborder="0"
+      webkitallowfullscreen
+      mozallowfullscreen
+      allowfullscreen
+    ></iframe>
+    </figure>
+  )
+}
+
 const VideoCard = ({ title, date, description, link }) => {
   return (
     <div className="card">
       <div className="card-image">
-        <YoutubeEmbed src={link} />
+        {link.includes("vimeo") ? <VimeoEmbed src={link} /> : <YoutubeEmbed src={link} /> }
       </div>
       <div
         className="card-content py-4"
