@@ -10,18 +10,18 @@ import "./index.css";
 
 const Root = () => {
   const { data, loading, error } = useGoogleSheets({
-    apiKey: "AIzaSyDnZ4bFfMlvV4VBL9RKsQJ2LdVXht4vLKY",
+    apiKey: process.env.NODE_ENV === 'development'
+      ? process.env.REACT_APP_LOCAL_API_KEY
+      : "AIzaSyBTJnfAyzfEUkDx1WCJ-dl_Gi_4-2h-fjY",
     sheetId: "1_wiygUp4ZTrDy5VBjSO3tYVSlTQXBMWd-G1alnulptQ",
   });
-  console.log(data)
   return <div>
-    <div style={{ display: "none" }}>url: {process.env.PUBLIC_URL}</div>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route index element={<Home data={data}/>} />
-          <Route path="about" element={<About data={data}/>} />
-          <Route path="works" element={<Works data={data}/>} />
+          <Route index element={<Home data={data} />} />
+          <Route path="about" element={<About data={data} />} />
+          <Route path="works" element={<Works data={data} />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
